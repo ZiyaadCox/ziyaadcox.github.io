@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ziyaad Cox – Test Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --card: #0f172a;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #020617, #020617 45%, #000 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #020617, #020617);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.8),
+        inset 0 0 0 1px rgba(148, 163, 184, 0.1);
+      padding: 2rem 2.5rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .badge--accent {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 2.75rem);
+      margin: 0 0 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 40rem;
+      line-height: 1.5;
+      margin-bottom: 1.75rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+    }
+
+    @media (max-width: 800px) {
+      .card {
+        padding: 1.75rem 1.5rem;
+      }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .pill-dot {
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .section {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(30, 64, 175, 0.45);
+    }
+
+    .text-small {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .dummy-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(248, 113, 113, 0.1);
+      border: 1px dashed rgba(248, 113, 113, 0.6);
+      color: rgb(248, 113, 113);
+      margin-bottom: 0.5rem;
+    }
+
+    .dummy-label span {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      color: var(--accent);
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent);
+      margin-top: 0.75rem;
+    }
+
+    a.button:hover {
+      filter: brightness(1.08);
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 0.75rem;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.2rem 0.45rem;
+      border-radius: 0.45rem;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="badge-row">
+        <span class="badge badge--accent">User Site Test Run</span>
+        <span class="badge">GitHub Pages · Dummy Data</span>
+      </div>
+
+      <h1>Hi, I’m <strong>Ziyaad</strong> &mdash; this is a test page.</h1>
+      <p class="subtitle">
+        This website is currently running as a <strong>temporary sandbox</strong>
+        on GitHub Pages. Everything you see here is dummy content that can be
+        wiped and replaced once the real portfolio and blog are ready.
+      </p>
+
+      <div class="grid">
+        <div>
+          <h2>What this site will eventually be</h2>
+          <ul class="list">
+            <li class="section">
+              <div class="dummy-label"><span>●</span> Dummy content</div>
+              <p class="text-small">
+                Replace this with a real introduction: who you are, what you
+                build, and what problems you like solving (embedded systems,
+                DSP, MCU tooling, etc.).
+              </p>
+            </li>
+            <li class="section">
+              <p class="text-small">
+                Future sections could include:
+              </p>
+              <ul class="list">
+                <li class="pill">
+                  <span class="pill-dot"></span>
+                  <span>Selected projects &ndash; MCU / DSP / tools</span>
+                </li>
+                <li class="pill">
+                  <span class="pill-dot"></span>
+                  <span>Technical blog posts written in Markdown</span>
+                </li>
+                <li class="pill">
+                  <span class="pill-dot"></span>
+                  <span>Notes & diagrams exported from Obsidian</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>GitHub Pages quick reference</h2>
+          <div class="section">
+            <p class="text-small">
+              This site is served from the repository:
+              <br />
+              <code>ziyaadcox.github.io</code>
+            </p>
+            <p class="text-small">
+              To completely reset this site later, you can either:
+            </p>
+            <ul class="list">
+              <li class="text-small">
+                &mdash; Delete all files and push a new version, or
+              </li>
+              <li class="text-small">
+                &mdash; Delete and recreate the repo with the same name.
+              </li>
+            </ul>
+            <p class="text-small">
+              Once you have real content, simply replace this file with your
+              production layout or static site generator output.
+            </p>
+
+            <a class="button" href="https://github.com/ziyaadcox/ziyaadcox.github.io">
+              Open repo on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
